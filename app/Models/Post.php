@@ -16,14 +16,16 @@ class Post extends Model
         'user_name',
         'field_id',
         'post_type',
+        'field_name',
+        'title',
         'location',
         'date',
         'description',
+        'rejected_reason',
         'thumbnail',
         'auto_delete_date',
         'status',
-        'title',
-        'field_name',
+        'is_disabled',
         'post_type_id',
     ];
 

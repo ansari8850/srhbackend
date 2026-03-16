@@ -576,7 +576,6 @@ class PostController extends Controller
             ];
 
             $update_post = Post::where('id', $request->post_id)
-                ->where('user_id', $request->user_id)
                 ->first();
 
             if (!$update_post) {

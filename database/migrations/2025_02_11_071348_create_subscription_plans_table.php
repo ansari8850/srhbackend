@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('subscription_plans', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 255)->nullable();
+            $table->text('description')->nullable();
+            $table->decimal('price', 10, 2);
+            $table->integer('duration')->default(0);
+            $table->tinyInteger('rolledback')->default(0);
             $table->timestamps();
         });
     }

@@ -636,8 +636,8 @@ class UserController extends Controller
             //     // ->following()
             //     ->with('following');
 
-            $followingQuery=Followers::where('user_id',$userId)
-                ->with('follower');
+            $followingQuery=Followers::where('follower_id',$userId)
+                ->with('user');
 
             // Apply search filter if provided
             if ($request->filled('search')) {
@@ -688,8 +688,8 @@ class UserController extends Controller
         }
         try{
             
-            $followers=Followers::where('follower_id',$request['user_id']);
-            // ->with('user');
+            $followers=Followers::where('user_id',$request['user_id']);
+            // ->with('follower');
 
             if($request['search']!=null){
                 $followers=$followers->whereHas('user',function($q) use ($request){
@@ -750,7 +750,7 @@ class UserController extends Controller
             ], 400);
         }
         try{
-            $following=Followers::where('user_id',$request['user_id']);
+            $following=Followers::where('follower_id',$request['user_id']);
 
             if($request['search']!=null){
                 $following=$following->whereHas('follower',function($q) use ($request){

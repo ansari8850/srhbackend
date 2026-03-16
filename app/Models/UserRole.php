@@ -14,6 +14,9 @@ class UserRole extends Model
     protected $fillable = [
         'role_name',
         'status',
+        'enteredbyid',
+        'organisation_id',
+        'is_disabled',
     ];
 
     protected static function boot()

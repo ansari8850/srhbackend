@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             'role_id' => 1
         ]);
 
+        /*
         \App\Models\Employee::create([
             'user_id' => $user->id,
             'first_name' => 'Test',
@@ -35,10 +36,10 @@ class DatabaseSeeder extends Seeder
             'role_id' => 1,
             'employee_id' => 'EMP001'
         ]);
+        */
 
         \App\Models\UserPermissions::create([
             'role_id' => 1,
-            'role_name' => 'Admin',
             'modules' => json_encode(['all'])
         ]);
 
@@ -89,17 +90,17 @@ class DatabaseSeeder extends Seeder
         \App\Models\Notification::create([
             'user_id' => $mobileUser->id,
             'title' => 'Welcome!',
-            'message' => 'Welcome to SR Health Community.',
-            'type' => 'system',
-            'read' => 0
+            'body' => 'Welcome to SR Health Community.',
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
 
         \App\Models\Notification::create([
             'user_id' => $mobileUser->id,
             'title' => 'New Post',
-            'message' => 'A new post was added in Ayurveda.',
-            'type' => 'post',
-            'read' => 0
+            'body' => 'A new post was added in Ayurveda.',
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
     }
 }

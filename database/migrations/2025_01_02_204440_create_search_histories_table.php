@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('search_histories', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id', 200)->nullable();
+            $table->string('search_word', 255)->nullable();
+            $table->string('status', 100)->nullable();
             $table->timestamps();
         });
     }

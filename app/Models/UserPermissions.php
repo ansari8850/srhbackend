@@ -12,7 +12,10 @@ class UserPermissions extends Model
 
 
     protected $fillable = [
-        'role_id','modules','role_name'
+        'role_id',
+        'modules',
+        'organisation_id',
+        'is_disabled',
     ];
 
     protected static function boot()

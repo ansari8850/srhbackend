@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('user_permissions', function (Blueprint $table) {
             $table->id();
-            $table->integer('role_id')->nullable();
+            $table->integer('role_id')->default(0);
             $table->string('role_name')->nullable();
-            $table->text('modules')->nullable();
-            $table->integer('enteredbyid')->nullable();
-            $table->integer('organisation_id')->nullable();
+            $table->longText('modules')->nullable();
+            $table->integer('enteredbyid')->default(0);
+            $table->string('organisation_id', 100)->nullable();
+            $table->enum('is_disabled', ['0', '1'])->default('0');
             $table->timestamps();
         });
     }

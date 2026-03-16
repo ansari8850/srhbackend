@@ -509,7 +509,7 @@ class PreLoginController extends Controller
 		if (isset($request['search']) && $request['search'] != '') {
 			$keyword = "%" . $request['search'] . "%";
 			$countryQuery->whereRaw(
-				"(name LIKE ? OR numeric_code LIKE ? OR id LIKE ? OR currency LIKE ? OR currency_name LIKE ? OR phonecode LIKE ?)",
+				"(name LIKE ? OR numeric_code LIKE ? OR id LIKE ? OR currency LIKE ? OR currency_name LIKE ? OR phone_code LIKE ?)",
 				[$keyword, $keyword, $keyword, $keyword, $keyword, $keyword]
 			);
 		}

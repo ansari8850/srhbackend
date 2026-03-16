@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('post_reporteds', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->string('user_name')->nullable();
-            $table->unsignedBigInteger('post_id')->nullable();
-            $table->string('post_title')->nullable();
+            $table->integer('user_id')->nullable();
+            $table->string('user_name', 255)->nullable();
+            $table->integer('post_id')->nullable();
+            $table->string('post_title', 255)->nullable();
             $table->text('reason')->nullable();
-            $table->string('date')->nullable();
-            $table->string('status')->nullable();
+            $table->dateTime('date')->nullable();
+            $table->string('status', 50)->nullable();
             $table->timestamps();
         });
     }

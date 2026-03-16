@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->default(0);
+            $table->integer('payment_id')->default(0);
+            $table->unsignedBigInteger('subscription_plan_id')->default(0);
+            $table->decimal('amount', 10, 2)->default(0.00);
+            $table->string('start_date', 20)->nullable();
+            $table->string('valid_till', 20)->nullable();
             $table->timestamps();
         });
     }

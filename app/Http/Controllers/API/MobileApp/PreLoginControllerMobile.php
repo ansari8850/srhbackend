@@ -455,7 +455,7 @@ class PreLoginControllerMobile extends Controller
 	
 	public function mobile_logout(Request $request){
 
-		$request->user()->token()->revoke();
+		$request->user()->currentAccessToken()->delete();
 
 		return response(array('message'=>'Logout successfully.'),200);
 	}

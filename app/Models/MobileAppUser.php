@@ -31,12 +31,12 @@ class MobileAppUser extends Model
     
     public function followers()
     {
-        return $this->hasMany(Followers::class, 'follower_id')->with('user');
+        return $this->hasMany(Followers::class, 'user_id')->with('follower');
     }
     
     public function following()
     {
-        return $this->hasMany(Followers::class, 'user_id')->with('follower');
+        return $this->hasMany(Followers::class, 'follower_id')->with('user');
     }
 
     public function bank_details(){

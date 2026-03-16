@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('post_book_marks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('post_id');
+            $table->string('user_id', 191)->nullable();
+            $table->string('post_id', 191)->nullable();
             $table->timestamps();
         });
     }
